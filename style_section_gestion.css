@@ -1,0 +1,54 @@
+#gestionPrestamo {
+    height: 100vh;
+    width: full;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10vh;
+    background-color: rgba(244, 244, 225, 0.511); 
+
+    
+  }
+  .contenedorGestionPrestamo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .titulo2{
+    font-size: 3em;
+    margin-bottom: 1rem;
+  }
+
+  .box {
+    width: 200px;
+    height: 200px;
+    background-color: #ccc;
+    margin: 0 20px;
+    text-align: center;
+    line-height: 200px;
+    font-size: 24px;
+    border-radius: 20px;
+    background-size: cover; /* Para asegurarse de que la imagen cubra todo el enlace */
+    background-position: center; /* Centra la imagen dentro del enlace */
+    border: 1px solid white; 
+    backdrop-filter: blur(10px);
+    background-blend-mode: darken;
+  
+  }
+  .contenedorGestionPrestamo a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+  }
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .box {
+      margin: 20px 0;
+    }
+  }

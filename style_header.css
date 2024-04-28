@@ -1,0 +1,33 @@
+header {
+    background-color:  #5315d0;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    height: 10vh;
+  }
+
+  .logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+
+  nav ul li a {
+   
+    color: white;
+    text-decoration: none;
+  }

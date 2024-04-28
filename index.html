@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Préstamos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style_header.css">
+    <link rel="stylesheet" href="style_inicio.css">
+    <link rel="stylesheet" href="style_section_gestion.css">
+    <link rel="stylesheet" href="table.css">
+    <link rel="stylesheet" href="popup.css">
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script> -->
+    <style >
+        :root{
+            --primaryColor: #5315d0;
+            --secondaryColor: #ff6b6b82;
+        }
+        body{
+            overflow-x: hidden!important;
+        }
+   
+    </style>
+
+</head>
+<body>
+    <header>
+        <div class="logo">Prestamos Familia Blanco</div>
+        <nav>
+            <ul>
+            <li><a href="#gestionPrestamo">Gestión de Préstamos</a></li>
+            <li><a href="#">Historial</a></li>
+            <li><a href="#">Reporte</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- seccion de busqueda de prestamos -->
+    <section class="inicio">
+        <h1 class="titulo">Busca un Préstamo</h1>
+        <input type="text" list="ice-cream-flavors" class="input-busqueda" placeholder="Introduce tu búsqueda...">
+        <datalist id="ice-cream-flavors">
+           
+        </datalist>
+        <div class="final"></div>
+    </section>
+
+    <div id="popup" class="popup" style="display: none;">
+        <div class="popup-content">
+          <span class="close-button" >&times;</span>
+            <p style="z-index: -1;position: absolute;opacity: 0;">¡Has seleccionado <span id="selected-flavor"></span>!</p>
+          <div class="container_tabla">
+            <table id="quoteTable">
+                <thead>
+
+                </thead>
+                <tbody>
+                    
+                </tbody>
+
+            </table>
+          </div>
+          <div class="popup_footer">
+            <input type="number" id="inputPopup">
+            <button id="botonPagarPopup">PAGAR</button>
+          </div>
+        </div>
+    </div>
+    <div id="overlay" class="overlay" style="display: none;"></div>
+
+    <section id="gestionPrestamo">
+        <h1 class="titulo">Escoge una opcion</h1>
+        <div class="contenedorGestionPrestamo">
+        <a href="#crearCliente" class="box" style="background-image: url('image.png');" >Nuevo Cliente</a>
+        <a href="#crearPrestamo" class="box" style="background-image: url('prestamo.jpg');" >Nuevo Prestamo</a>
+        <a href="#gestionarPago" class="box" style="background-image: url('pago.png');">Gestionar Pagos</a>
+        <a href="#mostrarReportes" class="box"style="background-image: url('Indicadores-Financieros.jpg');">Reportes</a>
+        </div>
+        
+    </section>
+
+    <section id="crearCliente" class="seccionGestion" >
+            <h2 class="titulo2 ">Crear Cliente</h2>
+            <form id="clientForm">
+                <div class="contenedorColumnasFormulario">
+                    <div class="columnaizquierda">
+                        <label>Nombre del cliente</label>
+                        <input type="text" id="clientName" placeholder="Nombre del Cliente" required>
+                        <label>Cedula</label>
+                        <input type="text" id="clientId" placeholder="Cedula" required>
+                        <label>Telefono</label>
+                        <input type="text" id="clientCellphone" placeholder="Telefono" required>
+                        <label>Direcccion</label>
+                        <input type="text" id="clientAdress" placeholder="Direcccion" required>
+                    </div>
+                    <div class="columnaderecha">
+                        <label>Nombre del Fiador</label>
+                        <input type="text" id="clientNameFiador" placeholder="Nombre del Fiador" required>
+                        <label>Cedula Fiador</label>
+                        <input type="text" id="clientIdFiador" placeholder="Cedula del Fiador" required>
+                        <label>Telefono Fiador</label>
+                        <input type="text" id="clientCellphoneFiador" placeholder="Telefono del Fiador" required>
+                        <label>Direcccion Fiador</label>
+                        <input type="text" id="clientAdressFiador" placeholder="Direcccion del Fiador" required>
+                        
+               
+                    </div>
+                </div>
+                <label> Prestamista</label>
+                <select id="clientLender">
+                    <option value="SinSelect">Selecione un Prestamisa</option>
+                    <option value="Antonio">Antonio</option>
+                    <option value="Carlos">Carlos</option>
+                </select>
+                
+                
+                
+                <button type="submit">Agregar Cliente</button>
+            </form>
+            <!-- <ul id="clientList"></ul> -->
+      
+        
+      
+    </section >
+
+
+    <section id="crearPrestamo" class="seccionGestion" style="background-color:  rgba(244, 244, 225, 0.511);">
+        
+            <form id="loanForm">
+                <label>Seleccione el cliente</label>
+                <select id="clientSelect"></select>
+                <label>Modalidad de pago</label>
+                <select name="clientMode" id="clientMode">
+                    <option value="SinSelect">Selecione una Modalidad</option>
+                    <option value="Diario">Diario</option>
+                    <option value="Semanal">Semanal</option>
+                    <option value="Quincenal">Quincenal</option>
+                    <option value="Mensual">Mensual</option>
+                    <option value="Bimestral">Bi Mensual</option>
+                    <option value="Trimestral">Trimestral</option>
+                </select>
+                <label>Monto del prestamo</label>
+                <input type="number" id="loanAmount" placeholder="Monto del préstamo" required class="cuotation">
+                <label>Tasa de interes</label>
+                <input type="number" id="loanInterest" placeholder="Interés (%)" required class="cuotation">
+                <label>Cantidad de cuotas</label>
+                <input type="number" id="loanTerm" placeholder="Plazo (meses)" required class="cuotation">
+                <div style="display: flex; justify-content: space-between;">
+                    <label> Cuota Exacta</label>
+                    <input type="number" id="valorCuota">
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                    <label> Cuota Aproximada</label>
+                    <input type="number" id="valorCuotaAproximada">
+                </div>
+                <button type="submit">Agregar Préstamo</button>
+            </form>
+            <h2 class="titulo2">Crear Préstamos</h2>
+            <!-- <ul id="loanList"></ul> -->
+
+    </section>
+   
+    <section id="gestionarPago" class="seccionGestion" style="height: 50vh !important;">
+        <h2 class="titulo2">Registrar Pagos</h2>
+        <form id="paymentForm">
+            <select id="loanSelect"></select>
+            <input type="number" id="paymentAmount" placeholder="Monto del pago" required>
+            <button type="submit">Realizar Pago</button>
+        </form>
+        <ul id="paymentList"></ul>
+    </section>
+
+    <section id="Reportes" class="seccionGestion" style="background-color: rgba(244, 244, 225, 0.511);flex-direction: column;justify-content: flex-start;gap: 20px;">
+        <h2 class="titulo2">Reporte Creditos activos</h2>
+        <table id="loanTable">
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Cliente</th>
+                <th>Modo de Préstamo</th>
+                <th>Monto del Préstamo</th>
+                <th>Cuota</th>
+                <th>Fecha del Préstamo</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+          
+          <div id="pagination"></div>
+          
+          <h2 class="titulo2">Reporte Creditos Pagados</h2>
+
+    </section>
+    <script type="module" src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+.popup{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #e9e8e8;
+    width: 80%;
+    height: 80% ;
+    padding: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 10;
+}
+.close-button{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    background-color: rgba(0, 0, 0, 0.8);;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+}
+.popup-content{
+   width: 100%;
+   height: 100%;
+   padding: 20px;
+   display: flex;
+   justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Ajusta la opacidad según tus preferencias */
+    z-index: 9; /* Asegúrate de que el overlay esté por encima de otros elementos */
+  }
+.container_tabla{
+    width: 550px;
+    height: 70%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+   
+}
+#quoteTable{
+    border: 1px solid black;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(132, 222, 255, 0.415);
+
+}
+
+
+#quoteTable thead td {
+    border: 1px solid black;
+    text-align: center;
+    text-wrap: nowrap;
+    font-weight: bold;
+
+}
+
+
+#quoteTable tbody td {
+    border: 1px solid black;
+    text-align: center;
+
+
+}
+.popup_footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+    width: 550px;
+    gap: 20px;
+
+}
+.popup_footer > *{
+    margin: 0 !important;
+}
+
+
+.small-column {
+    width: 50px; /* Ajusta el ancho según tus necesidades */
+    height: 30px;
+  }
+  
+.medium-column {
+    width: 150px; /* Ajusta el ancho según tus necesidades */
+    height: 30px;
+}
+
+/* para celular quiero que el with del popup sea del 100% */
+@media screen and (max-width: 600px) {
+    .popup{
+        width: 100%;
+    }
+}

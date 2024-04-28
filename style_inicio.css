@@ -1,0 +1,25 @@
+.inicio {
+    width: 100vw;
+    height: 90vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10vh;
+  }
+  .titulo {
+    font-size: 3em;
+    margin-bottom: 1rem;
+    
+  }
+  
+  .input-busqueda {
+    width: 80%;
+    max-width: 400px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 1em;
+    box-sizing: border-box;
+}

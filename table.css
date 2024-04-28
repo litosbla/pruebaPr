@@ -1,0 +1,41 @@
+.payment-row {
+    display: none;
+  }
+  
+.payment-row.show {
+    display: table-row;
+}
+
+#loanTable td, #loanTable th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #loanTable tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  #loanTable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .payment-table td, .payment-table th {
+    border: 1px solid #ddd;
+    padding: 4px;
+  }
+  
+  .payment-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .payment-table th {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+  }
